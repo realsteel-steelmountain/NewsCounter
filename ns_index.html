@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        WELCOME - News Counter proto 
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script> 
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: Dark)').matches
+        console.log(prefersDark); 
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+
+        body{
+            width : 90%;
+        	height : 90vh;
+            background-image: url("bgi.jpg");    
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color : whitesmoke
+        }
+
+
+        #popup{
+           
+            width: 50%;
+            height: 50%;
+            overflow: auto;
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            text-align: center;
+            font-family: 'Roboto Condensed', sans-serif;
+           
+            }
+        .explain{
+            font-size: large;
+        }
+        h1{
+            margin-bottom: 10px;
+        }
+        input[type=text] {
+             width: 80%;
+             box-sizing: border-box;
+             border: 2px solid #ccc;
+             border-radius: 4px;
+             font-size: 16px;
+             background-color: white;
+             background-image: url('searchicon.png');
+             background-size: 20px;
+             background-position: 10px 10px; 
+             background-repeat: no-repeat;
+             padding: 12px 20px 12px 40px;
+        }
+        .explain{
+            margin-bottom: 10px;
+        }
+        [type="date"] {
+              background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+        }
+        [type="date"]::-webkit-inner-spin-button {
+              display: none;
+        }
+        [type="date"]::-webkit-calendar-picker-indicator {
+              opacity: 0;
+        }
+
+        /* custom styles */
+        
+        label {
+          display: block;
+        }
+        input {
+          border: 1px solid #c4c4c4;
+          border-radius: 5px;
+          background-color: #fff;
+          padding: 3px 5px;
+          box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+          width: 40%;
+          padding: 6px 10px 6px 20px;
+        }
+
+        #date{
+            display: grid;
+            grid-template-columns: 50% 50%;
+
+        }
+
+        @media(max-height:300px) {
+            input[type=text] {
+                display: none;
+            }
+            label {
+                display: none;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-image: url("mountains.jpg");
+                color: rgb(61, 61, 61);
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-image: url("bgi.jpg");
+                color: whitesmoke;
+            }
+        }
+        
+
+    </style>
+
+</head>
+
+<body>
+    <div id="popup">
+        <h1>
+        This is Just Prototype of News Counter.
+        </h1>
+        <div class="explain">
+            If you need elaborate figures,
+            Never Use This Prototype.
+        </div>
+        <form action="resultspage.py" method="post">
+        <div id="date">
+            <div id='startdate'>
+                
+                <label for="startdate" style="margin-top: 20px;">Start Date</label>
+                <input type="date" name="ds" id="startdate" style="margin-bottom: 20px;">
+                
+            </div>
+            <div id="enddate">
+                
+                <label for="enddate" style="margin-top: 20px;">End Date</label>
+                <input type="date" name="de" id="enddate" style="margin-bottom: 20px;">
+            </div>
+                
+                           
+        </div>
+        <input type="text" name="query" placeholder="search..">
+        </form>
+
+        <form>
+            
+        </form> 
+    </div>
+ 
+
+</body>
+
+
+</html>
